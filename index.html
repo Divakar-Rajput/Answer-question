@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Styled Toggle Answers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .question {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .question p {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Question 1 -->
+    <div class="question">
+        <p>10. ____ addressing mode is most suitable to change the normal sequence of execution of instructions.<br>
+            a) Relative<br>
+            b) Indirect<br>
+            c) Index with Offset<br>
+            d) Immediate
+        </p>
+        <button class="button">View Answer</button>
+        <div class="answer">
+            <p><strong>Answer: a</strong><br>
+            Explanation: The relative addressing mode is used for this since it directly updates the PC.</p>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <p>11. Which of the following is not a valid addressing mode?<br>
+            a) Register<br>
+            b) Absolute<br>
+            c) Immediate<br>
+            d) Floating-Point
+        </p>
+        <button class="button">View Answer</button>
+        <div class="answer">
+            <p><strong>Answer: d</strong><br>
+            Explanation: Floating-Point is a data type, not an addressing mode.</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                if (answer.style.display === 'none' || !answer.style.display) {
+                    answer.style.display = 'block';
+                    button.textContent = 'Hide Answer';
+                } else {
+                    answer.style.display = 'none';
+                    button.textContent = 'View Answer';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+Add the functionality that only one answer is displayed other answers is hide
